@@ -1,0 +1,42 @@
+/* universal */
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+form input,
+form textarea,
+form select,
+form .uneditable-input {
+    border: 1px solid #eee;
+    background-color: #eee;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 15px;
+    @include box_sizing;
+}
+
+form input {
+    height: auto !important;
+}
