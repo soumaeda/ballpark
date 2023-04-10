@@ -40,3 +40,11 @@ form .uneditable-input {
 form input {
     height: auto !important;
 }
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin-bottom: 30px;
+  }
+}
