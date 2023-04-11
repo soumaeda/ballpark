@@ -13,6 +13,21 @@
   </head>
 
   <body>
+    <header ckass="navbar fixed-top navbar-light gb-light navbar-expand-lg">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li>
+                <%= link_to logout_path, data: { "turbo-method": :delete } do %>
+                  <button class="btn btn-primary">ログアウト</button>
+                <% end %>
+              </li>
+            <% end%>
+          </ul>
+        </nav>
+      </div>
+    </header>
     <div class="container my-5">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
