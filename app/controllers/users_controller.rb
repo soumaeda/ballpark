@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      
+      flash[:success] = "新規登録完了"
+      redirect_to @user
     else
       render 'new', status: :unprocessable_entity
     end
