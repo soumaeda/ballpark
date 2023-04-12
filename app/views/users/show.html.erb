@@ -1,3 +1,2 @@
-<%%>
-<h1><%= @user.name %></h1>
-<%= image_tag @user.get_profile_image(100, 100) %>
+<%= gravatar_for @user %>
+  <%= @user.name %>
