@@ -9,3 +9,10 @@
     </div>
   </div>
 </div>
+
+<% if current_user.admin? && !current_user?(user) %>
+  <%= link_to "削除する", root_path, data: { "turbo-method": :delete,
+                                          turbo_confirm: "本当に削除しますか？" } %>
+<% end %>
+    
+

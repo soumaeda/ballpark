@@ -1,0 +1,21 @@
+<div class="new_place">
+  <h1>球場登録</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+  
+      <%= form_with model: @place do |f| %>
+      
+          <%= f.label :place, "球場名" %>
+          <%= f.text_field :place %>
+          
+          <%= f.label :place_image, "球場画像" %>
+          <%= f.file_field :place_image %>
+    
+          
+          <%= f.submit "球場登録", class: "btn btn-primary" %>
+      <% end %>
+     
+    </div>
+  </div>
+  
+</div>
