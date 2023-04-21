@@ -85,3 +85,5 @@ end
 group :production do
   gem "pg", "1.3.5"
 end
+
+gem 'active_storage_validations', '0.9.8'

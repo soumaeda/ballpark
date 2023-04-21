@@ -1,0 +1,21 @@
+<li class="bg-light p-3 mb-2" id="video-<%= videoid %>">
+  <%= link_to gravatar_for(video.user, size: 50), video.user %>
+  <span class="user"><%= link_to video.user.name, video.user %></span>
+  <span class="timestamp float-end">
+    <%= time_ago_in_words(video.created_at) %>
+  </span>
+  <%= link_to video do%>
+    <h3><%= video.content %></h3>
+  <% end %>
+  
+  <% if video.video.attached? %>
+    <%= image_tag video.movie, class:"post-movie" %>
+  <% end %>
+  
+  <% if current_user?(video.user) %>
+    <div class="text-end">
+      <%= link_to "削除", video, data: { "turbo-method": :delete,
+                                            turbo_confirm: "本当に削除しますか？" }, class:"text-danger" %>
+    </div>
+  <% end %>
+</li>

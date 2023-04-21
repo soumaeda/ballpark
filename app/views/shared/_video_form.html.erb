@@ -1,0 +1,13 @@
+<%= form_with(model: @video) do |f| %>
+  <%= render 'shared/error_message', object: f.object %>
+  
+  <div class="movie">
+    <%= f.file_field :video %>
+  </div>
+  
+  <div class="field">
+    <%= f.text_area :content, placeholder: "本文" %>
+  </div>
+  
+  <%= f.submit "投稿する", class: "btn btn-primary" %>
+<% end %>

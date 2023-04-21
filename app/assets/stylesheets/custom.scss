@@ -100,3 +100,31 @@ form input {
         }
     }
 }
+
+.videos {
+    list-style: none;
+    a {
+        color: #777;
+        text-decoration: none;
+    }
+    img {
+        border-radius: 50%;
+        width: 20px;
+    }
+    h3 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}
+
+form input[type="file"] {
+    background-color: #fff;
+    border: none;
+}
+
+.post-movie {
+    width: 100%;
+    border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
+}

@@ -14,5 +14,19 @@
   <%= link_to "削除する", root_path, data: { "turbo-method": :delete,
                                           turbo_confirm: "本当に削除しますか？" } %>
 <% end %>
+
+
+  <div class="row pt-3">
+    <div class="col-md-8 offset-md-2">
+      <% if @videos.any? %>
+        <h3>投稿数 (<%= @user.videos.count %>)</h3>
+        <ol class="videos">
+          <%= render @videos %>
+        </ol>
+        <%= will_paginate @videos, previous_label: '< 前へ', next_label: '次へ >' %>
+      <% end %>
+    </div>
+  </div>
+
     
 
