@@ -1,11 +1,16 @@
 class VideosController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :destroy]
   
+  def index
+    @videos = Video.all
+  end
+  
   def new
     @video = Video.new
   end
 
   def show
+    @video = Video.find(params[:id])
   end
 
   def create
@@ -13,13 +18,14 @@ class VideosController < ApplicationController
     @video.movie.attach(params[:content])
     if @video.save
       flash[:success] = "投稿完了"
-      redirect_to root_url, status: :see_other
+      redirect_to use_path, status: :see_other
     else
       render 'new', status: :unprocessable_entity
     end
   end
 
   def destroy
+    @video = Video.find(params[:id])
     @video.destroy
     flash[:success] = "投稿が削除されました"
     if request.referrer.nil?

@@ -1,8 +1,8 @@
 <h1>Place</h1>
 
 <% @places.each do |p| %>
-  <% link_to %>
-    <%= image_tag p.get_image %>
+  <%= image_tag p.get_image %>
+  <%= link_to p do %>
     <p>球場名：<%= p.place %></p>
   <% end %>
 <% end %>

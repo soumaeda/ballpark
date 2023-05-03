@@ -17,19 +17,26 @@
       <div class="container">
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <% if logged_in? %>
-              <li>
-                <%= link_to logout_path, data: { "turbo-method": :delete } do %>
-                  <button class="btn btn-primary">ログアウト</button>
-                <% end %>
-              </li>
-              <br>
-              <li>
-                <%= link_to new_video_path do %>
-                  <button class="btn btn-primary">投稿</button>
-                <% end %>
-              </li>
-            <% end%>
+            <div class='btn-toolbar' role="toolbar">
+              <% if logged_in? %>
+                <li>
+                  <%= link_to logout_path, data: { "turbo-method": :delete } do %>
+                    <button type="button" class="btn btn-primary">ログアウト</button>
+                  <% end %>
+                </li>
+                
+                <li>
+                  <%= link_to new_video_path do %>
+                    <button type="button" class="btn btn-success">投稿</button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to places_path do %>
+                    <button type="button" class="btn btn-success">球場</button>
+                  <% end %>
+                </li>
+              <% end%>
+            </div>
           </ul>
         </nav>
       </div>

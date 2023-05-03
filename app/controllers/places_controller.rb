@@ -19,7 +19,8 @@ class PlacesController < ApplicationController
   end
   
   def show
-    
+    @place = Place.find(params[:id])
+    @videos = @place.videos.all
   end
   
   private

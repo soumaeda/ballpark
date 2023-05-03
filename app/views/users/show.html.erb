@@ -21,7 +21,7 @@
       <% if @videos.any? %>
         <h3>投稿数 (<%= @user.videos.count %>)</h3>
         <ol class="videos">
-          <%= render @videos %>
+          <%= render "videos/index" %>
         </ol>
         <%= will_paginate @videos, previous_label: '< 前へ', next_label: '次へ >' %>
       <% end %>

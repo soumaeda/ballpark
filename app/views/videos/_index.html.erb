@@ -1,0 +1,7 @@
+<div class="videos">
+  <% @videos.each do |video| %>
+    <%= video_tag video.get_movie %>
+    <%= video.content %>
+    
+  <% end %>
+</div>

@@ -3,6 +3,9 @@ body {
   padding-top: 60px;
 }
 
+
+
+
 .users {
     list-style: none;
     margin: 0;
@@ -31,7 +34,8 @@ h1 {
 
 
 .btn {
-  float: right; /*ログアウトボタン右寄せ*/
+  float: right; /*ボタン右寄せ*/
+  margin-left: 10px;
 }
 
 section {
@@ -128,3 +132,4 @@ form input[type="file"] {
     height: 250px;
     object-fit: cover;
 }
+

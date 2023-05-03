@@ -1,4 +1,5 @@
 class Place < ApplicationRecord
+  has_many :videos, dependent: :destroy
   has_one_attached :place_image
   
   def get_image
