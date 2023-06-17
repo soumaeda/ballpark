@@ -1,8 +1,18 @@
-<h1 class="mb-4">Place</h1>
+<div class="d-flex justify-content-start">
+  <h1 class="mb-4">球場</h1>
+</div>
 
-<% @places.each do |p| %>
-  <%= image_tag(asset_path(p[:image]), size: "300x200") %>
-  <%= link_to p do %>
-    <p><%= p[:name] %></p>
+<table class="table">
+  <% @places.each_slice(3) do |place_group| %>
+    <tr>
+      <% place_group.each do |p| %>
+        <td>
+          <%= image_tag(asset_path(p[:image]), size: "300x200") %>
+          <%= link_to p do %>
+            <p><%= p[:name] %></p>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
   <% end %>
-<% end %>
+</table>
