@@ -18,7 +18,7 @@ class VideosController < ApplicationController
     @video.movie.attach(params[:content])
     if @video.save
       flash[:success] = "投稿完了"
-      redirect_to use_path, status: :see_other
+      redirect_to user_path(current_user), status: :see_other
     else
       render 'new', status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class VideosController < ApplicationController
   private
 
     def video_params
-      params.require(:video).permit(:content, :movie)
+      params.require(:video).permit(:content, :movie, :place_id)  #place_id追加
     end
     
     def correct_user

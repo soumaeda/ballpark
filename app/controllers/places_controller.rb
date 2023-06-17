@@ -1,7 +1,11 @@
 class PlacesController < ApplicationController
   
   def index
-    @places = Place.all
+    @places = [
+      { id: 1, name: "東京ドーム", image: 'parks/tokyo_dome.jpg'},
+      { id: 2, name: "エスコンフィールド", image: 'parks/esconfield.jpg'},
+      { id: 3, name: "楽天モバイルパーク", image: 'parks/rakuten_mobile_park.jpg'}
+    ]
   end
   
   def new

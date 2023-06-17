@@ -1,8 +1,8 @@
-<h1>Place</h1>
+<h1 class="mb-4">Place</h1>
 
 <% @places.each do |p| %>
-  <%= image_tag p.get_image %>
+  <%= image_tag(asset_path(p[:image]), size: "300x200") %>
   <%= link_to p do %>
-    <p>球場名：<%= p.place %></p>
+    <p><%= p[:name] %></p>
   <% end %>
 <% end %>
